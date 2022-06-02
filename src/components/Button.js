@@ -1,16 +1,18 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import '../index.css';
 
-const Button = ({ id, buttonName, onclick }) => {
+const Button = ({ id, onClick, className }) => (
   <>
-    <button type="button" id={id} className={buttonName} onClick={onclick}>{id}</button>
-  </>;
-};
+    <button type="button" id={id} onClick={onClick} className={className}>
+      {id}
+    </button>
+  </>
+);
 
-Button.PropTypes = {
+Button.propTypes = {
   id: PropTypes.string.isRequired,
-  buttonName: PropTypes.string.isRequired,
-  onclick: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default Button;
