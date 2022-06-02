@@ -1,32 +1,57 @@
 import React from 'react';
+import Button from './Button';
+import calculate from '../logic/calculate';
 
-class Calculator extends React.PureComponent {
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: 0,
+      next: null,
+      operation: null,
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick = (event) => {
+    const result = calculate(this.state, event.target.id);
+    this.setState(result);
+  };
+
   render() {
+    const { total, next, operation } = this.state;
     return (
-      <div className="btn-container">
-        <button type="button" className="top">AC</button>
-        <button type="button" className="top">+/-</button>
-        <button type="button" className="top">%</button>
-        <button type="button" className="right-btn">/</button>
+      <div>
+        <div className="result">
+          <span>{total}</span>
+          <span>{operation}</span>
+          <span>{next}</span>
+        </div>
+        <div className="btn-container">
+          <Button className="top" onClick={this.onClick} id="AC" />
+          <Button className="top" onClick={this.onClick} id="+/-" />
+          <Button className="top" onClick={this.onClick} id="%" />
+          <Button className="right-btn" onClick={this.onClick} id="÷" />
 
-        <button type="button" className="top">7</button>
-        <button type="button" className="top">8</button>
-        <button type="button" className="top">9</button>
-        <button type="button" className="right-btn">X</button>
+          <Button className="top" onClick={this.onClick} id="7" />
+          <Button className="top" onClick={this.onClick} id="8" />
+          <Button className="top" onClick={this.onClick} id="9" />
+          <Button className="right-btn" onClick={this.onClick} id="x" />
 
-        <button type="button" className="top">4</button>
-        <button type="button" className="top">5</button>
-        <button type="button" className="top">6</button>
-        <button type="button" className="right-btn">-</button>
+          <Button className="top" onClick={this.onClick} id="4" />
+          <Button className="top" onClick={this.onClick} id="5" />
+          <Button className="top" onClick={this.onClick} id="6" />
+          <Button className="right-btn" onClick={this.onClick} id="-" />
 
-        <button type="button" className="top">1</button>
-        <button type="button" className="top">2</button>
-        <button type="button" className="top">3</button>
-        <button type="button" className="right-btn">+</button>
+          <Button className="top" onClick={this.onClick} id="1" />
+          <Button className="top" onClick={this.onClick} id="2" />
+          <Button className="top" onClick={this.onClick} id="3" />
+          <Button className="right-btn" onClick={this.onClick} id="+" />
 
-        <button type="button" className="top zero-btn">0</button>
-        <button type="button" className="top">.</button>
-        <button type="button" className="right-btn">=</button>
+          <Button className="top zero-btn" onClick={this.onClick} id="0" />
+          <Button className="top" onClick={this.onClick} id="." />
+          <Button className="right-btn" onClick={this.onClick} id="=" />
+        </div>
       </div>
     );
   }
