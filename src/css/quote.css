@@ -1,0 +1,8 @@
+.quote-main p {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+  padding: 0 3rem;
+  justify-content: center;
+  font-size: 1.5rem;
+}
