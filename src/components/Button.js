@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import '../index.css';
+import '../css/index.css';
 
 const Button = ({ id, onClick, className }) => (
   <>
