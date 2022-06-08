@@ -1,0 +1,11 @@
+.calculator-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.lets-math {
+  font-size: 2rem;
+  color: orange;
+  font-weight: bold;
+}
