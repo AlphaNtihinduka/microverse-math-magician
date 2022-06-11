@@ -24,6 +24,8 @@ Math Magician is a calculator build using react.js
 
 In the project directory, you can run:
 
+## Live Demo
+[Netlify](https://gentle-cupcake-7cb15a.netlify.app/)
 
 ### `npm start`
 
